@@ -6,12 +6,12 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./tabs.component.css']
 })
 export class TabsComponent implements OnInit {
-  characters = [
+  public characters = [
     {name: 'Luke Skywalker', side: ''},
     {name: 'Padme Amidala', side: ''},
     {name: 'Darth Vader', side: ''}
   ];
-  chosenList = 'all';
+  public chosenList = 'all';
 
   constructor() {
   }
@@ -19,10 +19,10 @@ export class TabsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChoose(side) {
+  public onChoose(side) {
     this.chosenList = side ;
   }
-  getCharacters() {
+  public getCharacters() {
     if (this.chosenList === 'all') {
       return this.characters.slice();
     }
