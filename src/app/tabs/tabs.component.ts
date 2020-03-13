@@ -1,19 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 
+import {StarWarsService} from '../star-wars.service';
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.css']
+  styleUrls: ['./tabs.component.css'],
+  providers: [StarWarsService]
 })
 export class TabsComponent implements OnInit {
-  public characters = [
-    {name: 'Luke Skywalker', side: ''},
-    {name: 'Padme Amidala', side: ''},
-    {name: 'Darth Vader', side: ''}
-  ];
+  public characters = [];
   public chosenList = 'all';
+  public swService: StarWarsService;
 
-  constructor() {
+  constructor(swService: StarWarsService) {
+    this.swService = swService;
   }
 
   ngOnInit(): void {
@@ -23,17 +23,13 @@ export class TabsComponent implements OnInit {
     this.chosenList = side ;
   }
   public getCharacters() {
-    if (this.chosenList === 'all') {
-      return this.characters.slice();
-    }
-    return this.characters.filter((char) => {
-      return char.side === this.chosenList;
-    });
-  }
-  public onSideChosen(charInfo) {
-    const pos = this.characters.findIndex((char) => {
-      return char.name === charInfo.name;
-    });
-    this.characters[pos].side = charInfo.side;
+    // if (this.chosenList === 'all') {
+    //   return this.characters.slice();
+    // }
+    // return this.characters.filter((char) => {
+    //   return char.side === this.chosenList;
+    // });
+    this.characters = this.swService.getCharacters(this.chosenList);
+    return this.characters;
   }
 }
