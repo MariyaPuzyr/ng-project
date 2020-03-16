@@ -1,3 +1,6 @@
+import {Injectable} from '@angular/core';
+
+@Injectable()
 export class StarWarsService {
   public characters = [
     {name: 'Luke Skywalker', side: ''},
