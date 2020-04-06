@@ -1,7 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {
   TabsComponent,
   ListComponent,
@@ -9,6 +9,7 @@ import {
 } from './';
 
 import {StarWarsService} from './star-wars.service';
+import {LogService} from './log.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {StarWarsService} from './star-wars.service';
   imports: [
     BrowserModule
   ],
-  providers: [StarWarsService],
+  providers: [StarWarsService, LogService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
