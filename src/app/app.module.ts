@@ -3,6 +3,8 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {
   TabsComponent,
   ListComponent,
