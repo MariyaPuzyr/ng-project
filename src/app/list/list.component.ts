@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       (params) => {
-
+        this.characters = this.swService.getCharacters(params.side);
       }
     );
   }
