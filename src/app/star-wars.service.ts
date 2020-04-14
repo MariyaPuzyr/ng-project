@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {LogService} from './log.service';
 import {Subject} from 'rxjs';
+import {Http} from '@angular/http';
 
 @Injectable()
 export class StarWarsService {
@@ -11,9 +12,15 @@ export class StarWarsService {
   ];
   private logService: LogService;
   public charactersChanged = new Subject<void>();
+  public http = Http;
 
-  constructor(logService: LogService) {
+  constructor(logService: LogService, http: Http) {
     this.logService = logService;
+    this.http = http;
+  }
+
+  public fetchCharacters() {
+
   }
 
   public getCharacters(chosenList) {
