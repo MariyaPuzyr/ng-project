@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.0.2",
-    "@angular/common": "~9.0.2",
+    "@angular/common": "^9.0.7",
     "@angular/compiler": "~9.0.2",
     "@angular/core": "~9.0.2",
     "@angular/forms": "~9.0.2",
@@ -20,6 +20,8 @@
     "@angular/platform-browser": "~9.0.2",
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^4.0.0",
     "bootstrap": "^4.4.1",
     "rxjs": "~6.5.4",
     "rxjs-compat": "^6.5.5",

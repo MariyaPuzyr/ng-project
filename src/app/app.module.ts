@@ -2,9 +2,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClient} from '@angular/common/http';
+import {AppComponent} from './app.component';
 import {
   TabsComponent,
   ListComponent,
@@ -15,8 +15,6 @@ import {StarWarsService} from './star-wars.service';
 import {LogService} from './log.service';
 import {CreateCharacterComponent} from './create-character/create-character.component';
 import {HeaderComponent} from './header/header.component';
-import {HttpModule} from '@angular/http';
-
 
 const routes = [
   {
@@ -43,7 +41,7 @@ const routes = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    HttpModule
+    HttpClientModule
   ],
   providers: [StarWarsService, LogService],
   bootstrap: [AppComponent]

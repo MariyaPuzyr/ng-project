@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {LogService} from './log.service';
 import {Subject} from 'rxjs';
-import {Http} from '@angular/http';
+// import {Http} from '@angular/http';
+import {HttpClient, HttpResponse} from '@angular/common/http';
 
 @Injectable()
 export class StarWarsService {
@@ -10,17 +11,16 @@ export class StarWarsService {
     {name: 'Padme Amidala', side: ''},
     {name: 'Darth Vader', side: ''}
   ];
-  private logService: LogService;
   public charactersChanged = new Subject<void>();
-  public http = Http;
 
-  constructor(logService: LogService, http: Http) {
-    this.logService = logService;
-    this.http = http;
-  }
+  constructor(private logService: LogService, private http: HttpClient) { }
 
   public fetchCharacters() {
-
+    this.http.get('https://pokeapi.co/api/v2/').subscribe(
+      (response: HttpResponse<any>) => {
+        console.log(response);
+      }
+    );
   }
 
   public getCharacters(chosenList) {
